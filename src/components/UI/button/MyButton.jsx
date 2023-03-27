@@ -1,8 +1,13 @@
 import style from './MyButton.module.css';
 
-const MyButton = ({children, ...props}) => {
+const MyButton = ({children, current, ...props}) => {
+
+    const classes = [style.myBtn]
+      if (current) {
+        classes.push(style.current);
+      }
     return (
-        <button {...props} className={style.myBtn}>
+        <button {...props} className={classes.join(' ')}>
             {children}
         </button>
     );

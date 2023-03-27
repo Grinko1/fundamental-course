@@ -4,7 +4,7 @@ import { TransitionGroup } from 'react-transition-group';
 import Post from './Post';
 
 const PostList = ({ posts, title, remove }) => {
-  if (!posts.length) {
+  if (!posts.length ) {
     return <h1>There is no post</h1>;
   }
 
@@ -15,7 +15,7 @@ const PostList = ({ posts, title, remove }) => {
         {posts &&
           posts.map((item, index) => (
             <CSSTransition key={item.id} timeout={250} classNames='post'>
-              <Post post={item} number={index + 1} remove={remove} />
+              <Post post={item} number={item.id} remove={remove} />
             </CSSTransition>
           ))}
       </TransitionGroup>

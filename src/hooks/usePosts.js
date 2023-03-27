@@ -12,7 +12,6 @@ export const useSortedPosts = (posts, sort) => {
 };
 
 export const useSortAndSearchPosts = (posts, sort, query) => {
-  console.log(query, sort);
   const sortedPost = useSortedPosts(posts, sort);
   const sortedAndSearchedPosts = useMemo(() => {
     if (query) {
